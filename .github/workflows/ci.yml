@@ -40,7 +40,7 @@ jobs:
     - name: Build and Push Docker Image 
       uses: mr-smithers-excellent/docker-build-push@v4
       with:  
-        image: santana20095/raouf-1987
+        image: santana20095/raouf-1987:master-041e5d3
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
