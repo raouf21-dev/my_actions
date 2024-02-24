@@ -36,5 +36,5 @@ jobs:
       with:  
         image: santana20095/raouf-1987
         registry: docker.io
-        login: "${{ secrets.DOCKERHUB_USERNAME }}"
-        password: "${{ secrets.DOCKERHUB_PASSWORD }}"
+        login: 'santana20095'
+        password: 'Salima200952013?'
