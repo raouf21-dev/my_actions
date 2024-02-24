@@ -35,4 +35,4 @@ jobs:
       uses: docker/login-action@v3
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORDN }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
