@@ -16,10 +16,10 @@ on:
 jobs:
   build:
 
-    runs-on: ${{matrix.os}} # we use this to run on different OS.
-    strategy:
-      matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macOS-latest'] 
+    runs-on: ubuntu-latest # ${{matrix.os}} # we use this to run on different OS.
+    #strategy:
+     # matrix:
+      #  os: ['ubuntu-latest', 'windows-latest', 'macOS-latest'] 
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -30,3 +30,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle 
       run: ./gradlew build
+      
+    - name: Build and Push Docker Image 
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:  
+        image: santana20095/raouf-1987
+        registry: docker.io
+        login: "${{ secrets.DOCKERHUB_USERNAME }}"
+        password: "${{ secrets.DOCKERHUB_PASSWORD }}"
